@@ -1,138 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CryptoMillions CSS Playground</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CryptoMillions Design Playground</title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --neon-pink: #f725ff;
-      --neon-green: #14ff27;
-      --neon-yellow: #ffe600;
-      --bg: #000;
-      --white: #fff;
-    }
-
+    
     body {
-      background-color: var(--bg);
-      color: var(--white);
-      font-family: 'Orbitron', sans-serif;
-      padding: 32px;
-    }
-
-    h1, h2 {
-      text-align: center;
-      text-shadow: 0 0 8px var(--neon-pink);
-    }
-
-    .block {
-      border: 1px dashed #555;
+      font-family: "inter", sans-serif;
+      background-color: #000;
+      color: #fff;
       padding: 20px;
-      margin: 40px 0;
-      border-radius: 12px;
+      margin: 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
     }
 
-    .neon-text {
-      color: var(--neon-green);
-      font-family: 'Press Start 2P', cursive;
-      text-shadow: 0 0 5px var(--neon-green), 0 0 10px var(--neon-green);
+    h1 {
+      font-family: "Press Start 2P", cursive;  
+      font-size: 16px;
+      color: rgb(255,0,255,0.80);
+      text-shadow: 0 0 25px rgb(255,0,255,0.80);
     }
 
-    .btn {
-      display: inline-block;
-      padding: 14px 28px;
-      background-color: var(--neon-pink);
-      border: none;
-      color: var(--bg);
-      font-weight: bold;
-      cursor: pointer;
-      border-radius: 8px;
-      box-shadow: 0 0 10px var(--neon-pink);
-      transition: transform 0.2s;
+    .section {
+      width: 90%;
+      max-width: 400px;
+      background-color: #000000;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgb(255,0,255,0.80);
     }
 
-    .btn:hover {
-      transform: scale(1.1);
-      box-shadow: 0 0 16px var(--neon-pink);
-    }
-
-    .gradient-box {
-      background: linear-gradient(45deg, var(--neon-pink), var(--neon-green));
-      height: 100px;
-      border-radius: 8px;
-      box-shadow: 0 0 12px var(--neon-green);
-    }
-
-    .animated-flicker {
-      animation: flicker 1s infinite alternate;
-      color: var(--neon-yellow);
-      font-size: 20px;
-    }
+    /* Softer neon heading */
     .neon-soft {
-  color: var(--neon-pink);
-  font-family: 'Press Start 2P', cursive;
-  text-shadow:
-    0 0 4px var(--neon-pink),
-    0 0 8px var(--neon-pink),
-    0 0 12px var(--neon-pink),
-    0 0 16px var(--neon-yellow),
-    0 0 20px var(--neon-yellow);
-}
-
-.neon-faint {
-  color: var(--neon-green);
-  font-family: 'Press Start 2P', cursive;
-  text-shadow:
-    0 0 2px var(--neon-green),
-    0 0 6px var(--neon-green),
-    0 0 10px var(--neon-green);
-}
-
-.neon-yellow-subtle {
-  color: var(--neon-yellow);
-  font-family: 'Press Start 2P', cursive;
-  text-shadow:
-    0 0 3px var(--neon-yellow),
-    0 0 5px var(--neon-yellow);
-}
-    @keyframes flicker {
-      from { opacity: 1; }
-      to { opacity: 0.3; }
+      color: #14FF27 ;
+      text-shadow: 0 0 6px #bec7bf , 0 0 12px #14FF27 ;
+      margin-bottom: 10px;
     }
 
-    .font-sample {
-      margin-bottom: 16px;
+    .neon-soft-text {
+      color: #ffffff ;
+      text-shadow: 0 0 70px #14FF27;
+      font-size: 10px;
+    }
+
+    /* Glowing button */
+    .btn-glow {
+      display: inline-block;
+      padding: 14px 24px;
+      background-color: #1a1a1a;
+      border: 2px solid #14FF27;
+      color: #14FF27 ;
+      border-radius: 6px;
+      font-size: 10px;
+      cursor: pointer;
+      transition: 0.3s ease;
+      margin-top: 20px;
+    }
+
+    .btn-glow:hover {
+      background-color: #ffff00;
+      color: #000;
+      box-shadow: 0 0 12px #ffff00; 
+    }
+
+    /* Glowing box for user/ticket info */
+    .box-glow {
+      background-color: #000000;
+      border: 1px solid #ffff00 ;
+      padding: 16px;
+      border-radius: 10px;
+      box-shadow: 0 0 4px #ffff00 ;
+      font-size: 10px;
+      margin-top: 20px;
+    }
+
+    /* Divider */
+    hr {
+      border: none;
+      border-top: 1px dashed #444;
+      width: 80%;
+      margin: 40px 0;
     }
   </style>
 </head>
 <body>
-  <h1>CryptoMillions Design Playground</h1>
 
-  <div class="block">
-    <h2>Fonts</h2>
-    <div class="font-sample" style="font-family: 'Orbitron';">Orbitron Sample</div>
-    <div class="font-sample" style="font-family: 'Press Start 2P';">Press Start 2P</div>
+  <h1> CryptoMillions Design Playground</h1>
+
+  <div class="section">
+    <h2 class="neon-soft">Example</h2>
+    <p class="neon-soft-text">This is some body text with a subtle glow effect, perfect for mobile readability.</p>
+    <a href="#" class="btn-glow">Enter the Raffle</a>
+    <div class="box-glow">
+      <p><strong>UID:</strong> 5FJSM6ONS1</p>
+      <p><strong>Tickets:</strong> 3</p>
+    </div>
   </div>
 
-  <div class="block">
-    <h2>Neon Text</h2>
-    <div class="neon-text">This is neon styled text</div>
+  <hr />
+
+  <div class="section">
+    <h2 class="neon-soft"> Example 2</h2>
+    <p class="neon-soft-text">Everything here is coded with Press Start 2P and tuned for a retro-futuristic Web3 vibe.</p>
+    <a href="#" class="btn-glow">Buy Tickets</a>
   </div>
 
-  <div class="block">
-    <h2>Buttons</h2>
-    <button class="btn">Pay with Crypto</button>
-  </div>
-
-  <div class="block">
-    <h2>Gradient + Glow Box</h2>
-    <div class="gradient-box"></div>
-  </div>
-
-  <div class="block">
-    <h2>Animations</h2>
-    <div class="animated-flicker">Flickering Text Example</div>
-  </div>
 </body>
 </html>
