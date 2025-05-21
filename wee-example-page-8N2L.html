@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CryptoMillions CSS Playground</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --neon-pink: #f725ff;
+      --neon-green: #14ff27;
+      --neon-yellow: #ffe600;
+      --bg: #000;
+      --white: #fff;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--white);
+      font-family: 'Orbitron', sans-serif;
+      padding: 32px;
+    }
+
+    h1, h2 {
+      text-align: center;
+      text-shadow: 0 0 8px var(--neon-pink);
+    }
+
+    .block {
+      border: 1px dashed #555;
+      padding: 20px;
+      margin: 40px 0;
+      border-radius: 12px;
+    }
+
+    .neon-text {
+      color: var(--neon-green);
+      font-family: 'Press Start 2P', cursive;
+      text-shadow: 0 0 5px var(--neon-green), 0 0 10px var(--neon-green);
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 28px;
+      background-color: var(--neon-pink);
+      border: none;
+      color: var(--bg);
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 8px;
+      box-shadow: 0 0 10px var(--neon-pink);
+      transition: transform 0.2s;
+    }
+
+    .btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 16px var(--neon-pink);
+    }
+
+    .gradient-box {
+      background: linear-gradient(45deg, var(--neon-pink), var(--neon-green));
+      height: 100px;
+      border-radius: 8px;
+      box-shadow: 0 0 12px var(--neon-green);
+    }
+
+    .animated-flicker {
+      animation: flicker 1s infinite alternate;
+      color: var(--neon-yellow);
+      font-size: 20px;
+    }
+
+    @keyframes flicker {
+      from { opacity: 1; }
+      to { opacity: 0.3; }
+    }
+
+    .font-sample {
+      margin-bottom: 16px;
+    }
+  </style>
+</head>
+<body>
+  <h1>CryptoMillions Design Playground</h1>
+
+  <div class="block">
+    <h2>Fonts</h2>
+    <div class="font-sample" style="font-family: 'Orbitron';">Orbitron Sample</div>
+    <div class="font-sample" style="font-family: 'Press Start 2P';">Press Start 2P</div>
+  </div>
+
+  <div class="block">
+    <h2>Neon Text</h2>
+    <div class="neon-text">This is neon styled text</div>
+  </div>
+
+  <div class="block">
+    <h2>Buttons</h2>
+    <button class="btn">Pay with Crypto</button>
+  </div>
+
+  <div class="block">
+    <h2>Gradient + Glow Box</h2>
+    <div class="gradient-box"></div>
+  </div>
+
+  <div class="block">
+    <h2>Animations</h2>
+    <div class="animated-flicker">Flickering Text Example</div>
+  </div>
+</body>
+</html>
