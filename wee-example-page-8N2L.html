@@ -87,6 +87,28 @@
       width: 80%;
       margin: 40px 0;
     }
+
+    .rotating-coin {
+  position: absolute;
+  bottom: 256px;
+  left: 269px;
+  width: 40px;
+  height: 40px;
+  animation: spin 4s linear infinite;
+  z-index: 10;
+}
+
+/* Create space for relative positioning inside the block */
+.section {
+  position: relative;
+}
+
+/* Rotation animation */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
   </style>
 </head>
 <body>
@@ -101,7 +123,8 @@
       <p><strong>UID:</strong> 5FJSM6ONS1</p>
       <p><strong>Tickets:</strong> 3</p>
     </div>
-  </div>
+    <img src="image/solana-coin.png" alt="Rotating Coin" class="rotating-coin" />
+</div>
 
   <hr />
 
