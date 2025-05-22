@@ -7,13 +7,13 @@
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    
+    /* GLOBAL RESET + BASE STYLES */
     body {
-      font-family: "inter", sans-serif;
+      font-family: 'Inter', sans-serif;
       background-color: #000;
       color: #fff;
       padding: 20px;
-      margin: 12px;
+      margin: 0;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -21,41 +21,43 @@
     }
 
     h1 {
-      font-family: "Press Start 2P", cursive;  
+      font-family: 'Press Start 2P', cursive;
       font-size: 16px;
-      color: rgb(255,0,255,0.80);
-      text-shadow: 0 0 25px rgb(255,0,255,0.80);
+      color: rgba(255, 0, 255, 0.8);
+      text-shadow: 0 0 25px rgba(255, 0, 255, 0.8);
     }
 
+    /* SECTION BLOCK WRAPPER */
     .section {
       width: 90%;
       max-width: 400px;
-      background-color: #000000;
+      background-color: #000;
       padding: 20px;
       border-radius: 10px;
-      box-shadow: 0 0 15px rgb(255,0,255,0.80);
+      box-shadow: 0 0 15px rgba(255, 0, 255, 0.8);
+      position: relative;
     }
 
-    /* Softer neon heading */
+    /* HEADINGS */
     .neon-soft {
-      color: #14FF27 ;
-      text-shadow: 0 0 6px #bec7bf , 0 0 12px #14FF27 ;
+      color: #14FF27;
+      text-shadow: 0 0 6px #bec7bf, 0 0 12px #14FF27;
       margin-bottom: 10px;
     }
 
     .neon-soft-text {
-      color: #ffffff ;
+      color: #fff;
       text-shadow: 0 0 70px #14FF27;
       font-size: 10px;
     }
 
-    /* Glowing button */
+    /* BUTTON */
     .btn-glow {
       display: inline-block;
       padding: 14px 24px;
       background-color: #1a1a1a;
       border: 2px solid #14FF27;
-      color: #14FF27 ;
+      color: #14FF27;
       border-radius: 6px;
       font-size: 10px;
       cursor: pointer;
@@ -66,21 +68,21 @@
     .btn-glow:hover {
       background-color: #ffff00;
       color: #000;
-      box-shadow: 0 0 12px #ffff00; 
+      box-shadow: 0 0 12px #ffff00;
     }
 
-    /* Glowing box for user/ticket info */
+    /* INFO BOX */
     .box-glow {
-      background-color: #000000;
-      border: 1px solid #ffff00 ;
+      background-color: #000;
+      border: 1px solid #ffff00;
       padding: 16px;
       border-radius: 10px;
-      box-shadow: 0 0 4px #ffff00 ;
+      box-shadow: 0 0 4px #ffff00;
       font-size: 10px;
       margin-top: 20px;
     }
 
-    /* Divider */
+    /* DIVIDER */
     hr {
       border: none;
       border-top: 1px dashed #444;
@@ -88,32 +90,82 @@
       margin: 40px 0;
     }
 
+    /* FLOATING COIN */
     .rotating-coin {
-  position: absolute;
-  bottom: 256px;
-  left: 269px;
-  width: 40px;
-  height: 40px;
-  animation: spin 4s linear infinite;
-  z-index: 10;
-}
+      position: absolute;
+      bottom: 256px;
+      right: 10px;
+      width: 40px;
+      height: 40px;
+      animation: spin 4s linear infinite;
+      z-index: 10;
+    }
 
-/* Create space for relative positioning inside the block */
-.section {
-  position: relative;
-}
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
 
-/* Rotation animation */
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
+    /* ==== RESPONSIVE BREAKPOINTS ==== */
+
+    /* Tablet 768px */
+    @media (min-width: 768px) {
+      h1 {
+        font-size: 20px;
+      }
+      .neon-soft-text,
+      .btn-glow,
+      .box-glow {
+        font-size: 12px;
+      }
+      .rotating-coin {
+        width: 50px;
+        height: 50px;
+        bottom: 256px;
+        right: 10px;
+      }
+    }
+
+    /* Large phones 414px+ */
+    @media (min-width: 414px) {
+      .section {
+        max-width: 450px;
+      }
+    }
+
+    /* Desktop 1024px */
+    @media (min-width: 1024px) {
+      body {
+        padding: 40px;
+      }
+
+      .section {
+        max-width: 600px;
+      }
+
+      h1 {
+        font-size: 22px;
+      }
+
+      .neon-soft-text,
+      .btn-glow,
+      .box-glow {
+        font-size: 14px;
+      }
+
+      .rotating-coin {
+        width: 60px;
+        height: 60px;
+        bottom: 256px;
+        right: 10px;
+      }
+    }
 
   </style>
 </head>
 <body>
 
-  <h1> CryptoMillions Design Playground</h1>
+  <h1>CryptoMillions Design Playground</h1>
 
   <div class="section">
     <h2 class="neon-soft">Example</h2>
@@ -123,13 +175,13 @@
       <p><strong>UID:</strong> 5FJSM6ONS1</p>
       <p><strong>Tickets:</strong> 3</p>
     </div>
-    <img src="/image/solana-coin.png" alt="Rotating Coin" class="rotating-coin" />
-</div>
+    <img src="image/solana-coin.png" alt="Rotating Coin" class="rotating-coin" />
+  </div>
 
   <hr />
 
   <div class="section">
-    <h2 class="neon-soft"> Example 2</h2>
+    <h2 class="neon-soft">Example 2</h2>
     <p class="neon-soft-text">Everything here is coded with Press Start 2P and tuned for a retro-futuristic Web3 vibe.</p>
     <a href="#" class="btn-glow">Buy Tickets</a>
   </div>
