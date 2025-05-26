@@ -124,23 +124,23 @@
       document.getElementById("uidDisplay").textContent = "************";
   
       // ✅ Send data to Google Sheet
-      fetch("https://script.google.com/macros/s/AKfycbxkwdF15RsKqyEokzIlMCp8U7JKaBNra93LEuQfQHOzqCg7YH6kjjh_rGLAVgdC8w4/exec", {
-        method: "POST",
-        headers: {
-          "Content-Type": "text/plaim"
-        },
-        body: JSON.stringify({
-          username: username,
-          uid: uid
-        })
-      })
-      .then(response => response.json())
-      .then(data => {
-        console.log("✅ UID saved to Google Sheet:", data);
-      })
-      .catch(error => {
-        console.error("❌ Error saving UID:", error);
-      });
+      fetch("http://localhost:3000/save-uid", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify({
+    username: username,
+    uid: uid
+  })
+})
+.then(response => response.json())
+.then(data => {
+  console.log("✅ Server response:", data);
+})
+.catch(error => {
+  console.error("❌ Error saving UID:", error);
+});
     }
   
     function toggleUID() {
